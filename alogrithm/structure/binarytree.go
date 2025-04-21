@@ -50,7 +50,50 @@ func (b *BinaryTree) Search(val int) bool {
 
 // * Important
 func (b *BinaryTree) Delete(val int) bool {
+	var parent *Node
+	curr := b.root
 
+	for curr != nil && curr.val != val {
+		if curr.val > val {
+			curr = curr.left
+		} else {
+			curr = curr.right
+		}
+	}
+	if curr == nil {
+		return false
+	}
+
+	var child *Node
+	if curr.left == nil {
+		child = curr.right
+	} else if curr.right == nil {
+		child = curr.left
+	} else {
+		successorParent := curr
+		successor := curr.right
+		for successor.left != nil {
+			successorParent = successor
+			successor = successor.left
+		}
+
+		curr.val = successor.val
+		if successorParent.left == successor {
+			successorParent.right = successor.right
+		} else {
+			successorParent.left = successor.right
+		}
+		return true
+	}
+
+	if parent == nil {
+		b.root = child
+	} else if parent.left == curr {
+		parent.left = child
+	} else {
+		parent.right = child
+	}
+	return true
 }
 
 func (b *BinaryTree) Min() (int, bool) {
