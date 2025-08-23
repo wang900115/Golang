@@ -1,5 +1,6 @@
-# **Golang Tutorial**
+# **Golang** 
 
+ > ## *Still learning new knowledge*
 ### Basic syntax 
 - Variable & Constants
 - Function & Methods
@@ -42,5 +43,3 @@
 ### Web3
 - P2P
 - Gossip
-
-# Still Updating
