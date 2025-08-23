@@ -8,6 +8,7 @@
 - Error Handing
 - Concurrency & Goroutine
 - Unit Test
+- Algorithm & Data Structure
 ### Design pattern
 - Iter
 - Generator & Decorator
